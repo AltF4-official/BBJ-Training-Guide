@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BJJ Training Guide</title>
+<style>
+    :root {
+        --bg: #0d0d0d;
+        --card: #181818;
+        --accent: #5A96DC;
+        --text: #f2f2f2;
+        --sub: #a0a0a0;
+    }
+
+    * {
+        box-sizing: border-box;
+        font-family: "Inter", Arial, sans-serif;
+    }
+
+    body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        font-size: 16px;
+        padding-bottom: 3rem;
+    }
+
+    header {
+        text-align: center;
+        background: var(--accent);
+        color: #fff;
+        padding: 1.2rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+    }
+
+    main {
+        max-width: 750px;
+        margin: 0 auto;
+        padding: 1.5rem;
+    }
+
+    .info {
+        color: var(--sub);
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+        transition: background 0.3s, color 0.3s;
+        border-radius: 6px;
+        padding: 0.4rem;
+    }
+
+    .info[contenteditable="true"] {
+        background: #222;
+        color: #fff;
+        outline: 1px dashed var(--accent);
+    }
+
+    section {
+        background: var(--card);
+        border-radius: 10px;
+        padding: 1rem 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    h2 {
+        color: var(--accent);
+        font-size: 1.1rem;
+        margin-bottom: 0.6rem;
+        text-transform: uppercase;
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 1rem;
+        margin: 0.3rem 0;
+    }
+
+    li {
+        margin: 0.4rem 0;
+        position: relative;
+    }
+
+    li::before {
+        content: "•";
+        color: var(--accent);
+        position: absolute;
+        left: -1rem;
+        font-weight: bold;
+    }
+
+    footer {
+        text-align: center;
+        color: var(--sub);
+        font-size: 0.85rem;
+        padding-top: 1rem;
+    }
+</style>
+</head>
+<body>
+
+<header>BJJ Training Guide</header>
+
+<main>
+
+<div class="info" id="editableInfo">
+    Age: 13 &nbsp; | &nbsp; Height: 175 cm &nbsp; | &nbsp; Weight: 55 kg<br>
+    BJJ Days: Mon / Wed / Sat<br>
+    Goal: Build strength, coordination, endurance & prevent injury.
+</div>
+
+<section>
+    <h2>Monday — BJJ</h2>
+    <ul>
+        <li>Technique + Movement Drills</li>
+        <li>Light post-session stretch (hips & shoulders)</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Tuesday — Strength & Coordination</h2>
+    <p><strong>Warm-up:</strong> Skipping rope 2 min, bear & crab crawls 20 m each, hip openers</p>
+    <ul>
+        <li>Bodyweight Squats × 15</li>
+        <li>Push-ups × 10</li>
+        <li>Plank Shoulder Taps × 20</li>
+        <li>Glute Bridge × 15</li>
+        <li>Side Plank Hold × 20 sec each side</li>
+    </ul>
+    <p>Rest 60 sec between rounds (3 rounds total)</p>
+    <p><strong>Optional:</strong> 3 × 20 m sprints or 3 × 30 sec bike</p>
+</section>
+
+<section>
+    <h2>Wednesday — BJJ</h2>
+    <ul>
+        <li>Rolling & Drills</li>
+        <li>Gentle foam roll before bed</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Thursday — Strength & Agility</h2>
+    <p><strong>Warm-up:</strong> Skips / hops / lunges / band pull-aparts</p>
+    <ul>
+        <li>Jump Squats × 10</li>
+        <li>Inverted Rows (TRX or table) × 8</li>
+        <li>Push-ups × 10</li>
+        <li>Bird-Dogs × 12 each side</li>
+        <li>Kettlebell Swings × 10</li>
+    </ul>
+    <p>Rest 60 sec between rounds (3–4 rounds)</p>
+    <p><strong>Agility:</strong> Sprawls × 20 </p>
+</section>
+
+<section>
+    <h2>Friday — Mobility / Recovery</h2>
+    <ul>
+        <li>20–30 min: Foam roll, pigeon stretch, shoulder dislocates, deep squat hold</li>
+        <li>Breathing drills: 5 min slow nasal breathing</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Saturday — BJJ</h2>
+    <ul>
+        <li>Sparring & Situational Drills</li>
+        <li>Ice or cold shower after training</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Sunday — Active Play / Light Cardio</h2>
+    <ul>
+        <li>Skate, surf, swim, cycle, or jog 20–30 min</li>
+        <li>Purpose: build aerobic base & keep training fun</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Tips</h2>
+    <ul>
+        <li>Focus on technique & consistency, not weight</li>
+        <li>Keep sessions short (30–45 min) and fun</li>
+        <li>Drink water throughout the day</li>
+        <li>Eat protein, carbs & veggies for recovery</li>
+        <li>Sleep 8–9 hrs nightly for best performance</li>
+    </ul>
+</section>
+
+<footer>© 2025 BJJ Training Guide — Stay consistent. Train smart.</footer>
+
+</main>
+
+<script>
+    const infoDiv = document.getElementById("editableInfo");
+    const storageKey = "bjjUserInfo";
+
+    // Load saved text if exists
+    if (localStorage.getItem(storageKey)) {
+        infoDiv.innerHTML = localStorage.getItem(storageKey);
+    }
+
+    // Toggle edit mode on Spacebar press
+    document.addEventListener("keydown", (e) => {
+        if (e.code === "Space" && document.activeElement !== infoDiv) {
+            e.preventDefault();
+            infoDiv.contentEditable = infoDiv.contentEditable !== "true";
+            if (infoDiv.contentEditable === "true") infoDiv.focus();
+        }
+    });
+
+    // Save when editing stops
+    infoDiv.addEventListener("blur", () => {
+        localStorage.setItem(storageKey, infoDiv.innerHTML);
+        infoDiv.contentEditable = "false";
+    });
+
+    // Save also when Enter pressed
+    infoDiv.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            infoDiv.blur();
+        }
+    });
+</script>
+
+</body>
+</html>
